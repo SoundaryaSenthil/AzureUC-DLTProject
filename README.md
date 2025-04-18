@@ -9,7 +9,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
 
 
-***Architecture:***
+***ARCHITECTURE:***
 	
  1	Source: GitHub Repository (CSV files accessed via API)
 	
@@ -23,21 +23,21 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 	
  6	Automation: Azure DevOps (CI/CD)
 
-****Key Components***
+****KEY COMPONENTS***
 
-***1.ADLS Integration and Bronze-Silver-Gold Zones***
+***🎯ADLS Integration and Bronze-Silver-Gold Zones***
 
 • Created four containers in ADLS for the Raw, Bronze, Silver, and Gold layers.
 
 • Set up folder structures to organize raw, transformed, and curated data systematically.
 	
-***2. Azure DevOps Integration***
+***🎯 Azure DevOps Integration***
 
 • Created an Azure DevOps account and set up a development branch.
 
 • Connected Azure Data Factory (ADF) with Azure DevOps for version control and pipeline management.
 	
-***3. Azure Data Factory Pipelines***
+***🎯 Azure Data Factory Pipelines***
 
 • Built two parameterized ADF pipelines:
 
@@ -49,7 +49,7 @@ Ingests data directly from GitHub using a parameterized HTTP URL.
 
 Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
-***4 . Azure Databricks with Unity Catalog***
+***🎯 Azure Databricks with Unity Catalog***
  
 • Integrated Azure Databricks with ADLS using the DB connector.
 
@@ -63,7 +63,7 @@ Ingests necessary files only if matches the condition from Azure Data Lake Stora
 
 • Saved the transformed data in Delta format.
 
-***5. Delta Live Tables (DLT) in Gold Layer*** 
+***🎯 Delta Live Tables (DLT) in Gold Layer*** 
  
 • Created a DLT pipeline in the Gold (Curated) layer.
 
@@ -71,7 +71,7 @@ Ingests necessary files only if matches the condition from Azure Data Lake Stora
 
 • Built final curated Delta tables using Databricks’ ETL framework (DLT).
 
-Key Features & Highlights:
+***KEY FEATURES & HIGHLIGHTS:***
 
 • Dynamic Ingestion: Parameterized GitHub URL allows flexible ingestion of different files without modifying the pipeline logic.
 
