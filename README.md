@@ -9,7 +9,7 @@ Key Components
 
 2. Azure Data Factory Pipelines
 • Built two parameterized ADF pipelines:
-• GitHub to Bronze Zone: Ingests data directly from GitHub using a parameterized HTTP URL.
+• GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
 • ADLS to Azure Data Lake: Ingests files from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
 3. Azure Databricks with Unity Catalog
