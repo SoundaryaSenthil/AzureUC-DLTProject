@@ -47,9 +47,11 @@ Components:
 Built two dynamic, parameterized ADF pipelines:
 
 	•	Pipeline 1: GitHub → Bronze
+ 
 Ingests CSV files directly from GitHub using a parameterized HTTP URL
 
 	•	Pipeline 2: Raw → Silver
+ 
 Moves selected files based on matching conditions to structured layers in ADLS
 
 ⸻
@@ -62,9 +64,10 @@ Moves selected files based on matching conditions to structured layers in ADLS
  
 	•	Created Silver Schema and performed transformations:
  
-	•	Handled null values, type casting, and duplicate checks
-	•	Applied window functions to compute cumulative weight by country
-	•	Cleaned and wrote data in Delta format
+	-	Handled null values, type casting, duplicate checks etc
+	-	Applied window functions to compute cumulative weight by country
+ 
+  • Cleaned and wrote data in Delta format
 
 ⸻
 
