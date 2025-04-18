@@ -11,17 +11,17 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 
 ***ARCHITECTURE:***
 	
- 1	Source: GitHub Repository (CSV files accessed via API)
+🧩 Source: GitHub Repository (CSV files accessed via API)
 	
- 2	Ingestion Layer: Azure Data Factory (ADF)
+ 🧩 Ingestion Layer: Azure Data Factory (ADF)
 	
- 3	Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
+ 🧩 Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
 	
- 4	Transformation: Azure Databricks (using notebooks and DLT pipelines)
+ 🧩 Transformation: Azure Databricks (using notebooks and DLT pipelines)
 	
- 5	Governance and Metadata: Unity Catalog in Databricks
+ 🧩 Governance and Metadata: Unity Catalog in Databricks
 	
- 6	Automation: Azure DevOps (CI/CD)
+ 🧩 Automation: Azure DevOps (CI/CD)
 
 ****KEY COMPONENTS***
 
@@ -41,13 +41,13 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 
 • Built two parameterized ADF pipelines:
 
-  1)GitHub to Bronze container in ADLS Gen 2:
+  1) GitHub to Bronze container in ADLS Gen 2:
 
-Ingests data directly from GitHub using a parameterized HTTP URL.
+     Ingests data directly from GitHub using a parameterized HTTP URL.
   
-  2)Raw to Silver Layer Ingestion: 
+  2) Raw to Silver Layer Ingestion: 
 
-Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
+     Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
 ***🎯 Azure Databricks with Unity Catalog***
  
