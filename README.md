@@ -19,34 +19,40 @@ Architecture:
 
 Key Components
 
-1. Azure DevOps Integration
+1. ADLS Integration and Bronze-Silver-Gold Zones
+
+• Created four containers in ADLS for the Raw, Bronze, Silver, and Gold layers.
+
+• Set up folder structures to organize raw, transformed, and curated data systematically.
+
+2. Azure DevOps Integration
    
 • Created an Azure DevOps account and set up a development branch.
 
 • Connected Azure Data Factory (ADF) with Azure DevOps for version control and pipeline management.
 
+
 3. Azure Data Factory Pipelines
    
 • Built two parameterized ADF pipelines:
 
-• 1)GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
+   1)GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
 
- 2)Raw to Silver Layer Ingestion: Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
+   2)Raw to Silver Layer Ingestion: Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
-5. Azure Databricks with Unity Catalog
+4. Azure Databricks with Unity Catalog
    
 • Integrated Azure Databricks with ADLS using the DB connector.
 
 • Set up Unity Catalog with external locations for Bronze, Silver, and Gold zones.
 
 • Created a schema for the Silver layer and performed the following transformations:
+  • Handled null values and data type conversions (e.g., string to float).
+  • Applied a window function to calculate the cumulative weight of athletes by country.
+  • Performed duplicate checks and more and cleaned the data
+  • Saved the transformed data in Delta format.
 
-• Handled null values and data type conversions (e.g., string to float).
-• Applied a window function to calculate the cumulative weight of athletes by country.
-• Performed duplicate checks and more and cleaned the data
-• Saved the transformed data in Delta format.
-
-7. Delta Live Tables (DLT) in Gold Layer
+5. Delta Live Tables (DLT) in Gold Layer
    
 • Created a DLT pipeline in the Gold (Curated) layer.
 
