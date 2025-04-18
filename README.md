@@ -3,38 +3,59 @@ This project showcases an end-to-end Azure Data Engineering solution using Azure
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
 Architecture:
 
+Architecture:
+
 1. Source: GitHub Repository (CSV files accessed via API)
+
 2. Ingestion Layer: Azure Data Factory (ADF)
+
 3. Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
+
 4. Transformation: Azure Databricks (using notebooks and DLT pipelines)
+
 5. Governance and Metadata: Unity Catalog in Databricks
-6. Automation: Azure DevOps (CI/CD),Delta Live Table
+
+6. Automation: Azure DevOps (CI/CD)
 
 Key Components
+
 1. Azure DevOps Integration
+   
 • Created an Azure DevOps account and set up a development branch.
+
 • Connected Azure Data Factory (ADF) with Azure DevOps for version control and pipeline management.
 
-2. Azure Data Factory Pipelines
+3. Azure Data Factory Pipelines
+   
 • Built two parameterized ADF pipelines:
+
 • 1)GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
+
  2)Raw to Silver Layer Ingestion: Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
-3. Azure Databricks with Unity Catalog
+5. Azure Databricks with Unity Catalog
+   
 • Integrated Azure Databricks with ADLS using the DB connector.
+
 • Set up Unity Catalog with external locations for Bronze, Silver, and Gold zones.
+
 • Created a schema for the Silver layer and performed the following transformations:
+
 • Handled null values and data type conversions (e.g., string to float).
 • Applied a window function to calculate the cumulative weight of athletes by country.
 • Performed duplicate checks and more and cleaned the data
 • Saved the transformed data in Delta format.
 
-4. Delta Live Tables (DLT) in Gold Layer
+7. Delta Live Tables (DLT) in Gold Layer
+   
 • Created a DLT pipeline in the Gold (Curated) layer.
+
 • Streamed Delta files from the Silver layer.
+
 • Built final curated Delta tables using Databricks’ ETL framework (DLT).
 
 Key Features & Highlights:
+
 • Dynamic Ingestion: Parameterized GitHub URL allows flexible ingestion of different files without modifying the pipeline logic.
 
 • CI/CD with DevOps: All changes are tracked, versioned, and deployed using Azure DevOps pipelines.
