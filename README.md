@@ -7,90 +7,81 @@ This project showcases a complete end-to-end Azure Data Engineering solution usi
 It demonstrates how to build a robust, scalable, and governed data pipeline from raw data ingestion to curated insights using the Bronze-Silver-Gold Lakehouse Architecture.
 
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
-Components:
 
-	•	Source: GitHub Repository (CSV via HTTP API)
- 
-	•	Ingestion Layer: Azure Data Factory (ADF)
- 
-	•	Storage: Azure Data Lake Storage Gen2 (Raw, Bronze, Silver, Gold)
- 
-	•	Transformation: Azure Databricks Notebooks + DLT Pipelines
- 
-	•	Governance: Unity Catalog for centralized access control
- 
-	•	Automation: Azure DevOps CI/CD for version control & deployment
 
-⸻
+Architecture:
+	
+ 1	Source: GitHub Repository (CSV files accessed via API)
+	
+ 2	Ingestion Layer: Azure Data Factory (ADF)
+	
+ 3	Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
+	
+ 4	Transformation: Azure Databricks (using notebooks and DLT pipelines)
+	
+ 5	Governance and Metadata: Unity Catalog in Databricks
+	
+ 6	Automation: Azure DevOps (CI/CD)
 
-🪣 ADLS Integration & Lakehouse Zoning
+Key Components
 
-	•	Created four containers: raw, bronze, silver, and gold
+1.ADLS Integration and Bronze-Silver-Gold Zones
+
+• Created four containers in ADLS for the Raw, Bronze, Silver, and Gold layers.
+
+• Set up folder structures to organize raw, transformed, and curated data systematically.
+	
+ 2. Azure DevOps Integration
+
+• Created an Azure DevOps account and set up a development branch.
+
+• Connected Azure Data Factory (ADF) with Azure DevOps for version control and pipeline management.
+	
+3. Azure Data Factory Pipelines
+
+• Built two parameterized ADF pipelines:
+
+  1)GitHub to Bronze container in ADLS Gen 2:
+
+Ingests data directly from GitHub using a parameterized HTTP URL.
+  
+  2)Raw to Silver Layer Ingestion: 
+
+Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
+
+	4	Azure Databricks with Unity Catalog
  
-	•	Implemented systematic folder structures for each data layer
- 
-	•	Ensured secure and optimized access between Databricks and ADLS
+• Integrated Azure Databricks with ADLS using the DB connector.
 
-⸻
+• Set up Unity Catalog with external locations for Bronze, Silver, and Gold zones.
 
-🔧 Azure DevOps Integration 	🔁
-	•	Set up an Azure DevOps Repo with dedicated development branches
- 
-	•	Linked ADF with DevOps for seamless source control & pipeline management
- 
-	•	Enabled CI/CD pipelines to automate deployment
+• Created a schema for the Silver layer and performed the following transformations:
 
-⸻
+  - Handled null values and data type conversions (e.g., string to float). 
+  - Applied a window function to calculate the cumulative weight of athletes by country. 
+  - Performed duplicate checks and more and cleaned the data
 
-🛠️ Azure Data Factory Pipelines	🔗
+• Saved the transformed data in Delta format.
 
-Built two dynamic, parameterized ADF pipelines:
+	5	Delta Live Tables (DLT) in Gold Layer
+ 
+• Created a DLT pipeline in the Gold (Curated) layer.
 
-	•	Pipeline 1: GitHub → Bronze
- 
-Ingests CSV files directly from GitHub using a parameterized HTTP URL
+• Streamed Delta files from the Silver layer.
 
-	•	Pipeline 2: Raw → Silver
- 
-Moves selected files based on matching conditions to structured layers in ADLS
+• Built final curated Delta tables using Databricks’ ETL framework (DLT).
 
-⸻
+Key Features & Highlights:
 
-🧪 Azure Databricks + Unity Catalog	🧠
+• Dynamic Ingestion: Parameterized GitHub URL allows flexible ingestion of different files without modifying the pipeline logic.
 
-	•	Configured DBFS + ABFS integration to access ADLS
- 
-	•	Registered External Locations in Unity Catalog for each zone
- 
-	•	Created Silver Schema and performed transformations:
- 
-	-	Handled null values, type casting, duplicate checks etc
-	-	Applied window functions to compute cumulative weight by country
- 
-  • Cleaned and wrote data in Delta format
+• CI/CD with DevOps: All changes are tracked, versioned, and deployed using Azure DevOps pipelines.
 
-⸻
+• Layered Lakehouse Architecture: Clean separation between raw, transformed, and curated data using the Bronze-Silver-Gold model.
 
-✨ Delta Live Tables (DLT) – Gold Layer
+• Automated Streaming: Real-time data ingestion and transformation with minimal manual intervention.
 
-	•	Built a DLT Pipeline in Databricks for the Gold/Curated Layer
- 
-	•	Streamed Delta-formatted Silver data
- 
-	•	Created final Gold Delta Tables using declarative ETL logic in DLT
+• Delta Lake + DLT: Reliable, scalable data storage and processing with ACID transactions and schema enforcement.
 
-⸻
+• Governance with Unity Catalog: Centralized data governance and access control across all layers.
 
-🌟 Key Features & Highlights
-
-	•	Dynamic Ingestion: Parameterized GitHub URL enables flexible, reusable pipelines
- 
-	•	CI/CD with Azure DevOps: Track, test, and deploy all changes efficiently
- 
-	•	Lakehouse Architecture: Bronze → Silver → Gold structured and governed zones
- 
-	•	Real-time Transformation: Automated using DLT for streaming data
- 
-	•	Delta Lake + DLT: ACID-compliant, scalable, and reliable data processing
- 
-	•	Unity Catalog: Ensures centralized governance and secure access control.
