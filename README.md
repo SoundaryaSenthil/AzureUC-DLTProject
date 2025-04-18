@@ -1,4 +1,4 @@
-Azure Data Engineering Project
+***AZURE DATA ENGINEERING PROJECT***
 
 with Azure DevOps, Unity Catalog, and Delta Live Tables (DLT)
 
@@ -9,7 +9,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
 
 
-Architecture:
+***Architecture:***
 	
  1	Source: GitHub Repository (CSV files accessed via API)
 	
@@ -23,7 +23,7 @@ Architecture:
 	
  6	Automation: Azure DevOps (CI/CD)
 
-Key Components
+****Key Components***
 
 1.ADLS Integration and Bronze-Silver-Gold Zones
 
@@ -31,7 +31,7 @@ Key Components
 
 • Set up folder structures to organize raw, transformed, and curated data systematically.
 	
- 2. Azure DevOps Integration
+****2. Azure DevOps Integration****
 
 • Created an Azure DevOps account and set up a development branch.
 
@@ -49,7 +49,7 @@ Ingests data directly from GitHub using a parameterized HTTP URL.
 
 Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
-	4	Azure Databricks with Unity Catalog
+****4 . Azure Databricks with Unity Catalog***
  
 • Integrated Azure Databricks with ADLS using the DB connector.
 
@@ -63,7 +63,7 @@ Ingests necessary files only if matches the condition from Azure Data Lake Stora
 
 • Saved the transformed data in Delta format.
 
-	5	Delta Live Tables (DLT) in Gold Layer
+****5. Delta Live Tables (DLT) in Gold Layer*** 
  
 • Created a DLT pipeline in the Gold (Curated) layer.
 
