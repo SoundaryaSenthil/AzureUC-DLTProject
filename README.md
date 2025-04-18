@@ -23,7 +23,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 	
  🧩 Automation: Azure DevOps (CI/CD)
 
-****KEY COMPONENTS***
+***KEY COMPONENTS***
 
 ***🎯ADLS Integration and Bronze-Silver-Gold Zones***
 
