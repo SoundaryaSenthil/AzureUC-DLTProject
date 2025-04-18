@@ -1,6 +1,14 @@
 Azure Data Engineering Project with Azure Devops,Unity Catalog and DLT
 This project showcases an end-to-end Azure Data Engineering solution using Azure Data Factory, Azure DevOps, and Azure Databricks with Unity Catalog. It demonstrates how to build a robust, scalable data pipeline from raw ingestion to curated insights following the Bronze-Silver-Gold architecture.
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
+Architecture:
+
+1. Source: GitHub Repository (CSV files accessed via API)
+2. Ingestion Layer: Azure Data Factory (ADF)
+3. Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
+4. Transformation: Azure Databricks (using notebooks and DLT pipelines)
+5. Governance and Metadata: Unity Catalog in Databricks
+6. Automation: Azure DevOps (CI/CD),Delta Live Table
 
 Key Components
 1. Azure DevOps Integration
@@ -25,3 +33,16 @@ Key Components
 • Created a DLT pipeline in the Gold (Curated) layer.
 • Streamed Delta files from the Silver layer.
 • Built final curated Delta tables using Databricks’ ETL framework (DLT).
+
+Key Features & Highlights:
+• Dynamic Ingestion: Parameterized GitHub URL allows flexible ingestion of different files without modifying the pipeline logic.
+
+• CI/CD with DevOps: All changes are tracked, versioned, and deployed using Azure DevOps pipelines.
+
+• Layered Lakehouse Architecture: Clean separation between raw, transformed, and curated data using the Bronze-Silver-Gold model.
+
+• Automated Streaming: Real-time data ingestion and transformation with minimal manual intervention.
+
+• Delta Lake + DLT: Reliable, scalable data storage and processing with ACID transactions and schema enforcement.
+
+• Governance with Unity Catalog: Centralized data governance and access control across all layers.
