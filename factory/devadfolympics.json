@@ -1,9 +1,0 @@
-{
-	"name": "devadfolympics",
-	"location": "southindia",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "933b5a93-e4fd-447c-9f8d-24589d14f8bd",
-		"tenantId": "304c3655-a3d2-44b7-8cd5-3250f4bbb0a5"
-	}
-}
