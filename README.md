@@ -1,7 +1,6 @@
 Azure Data Engineering Project with Azure Devops,Unity Catalog and DLT
 This project showcases an end-to-end Azure Data Engineering solution using Azure Data Factory, Azure DevOps, and Azure Databricks with Unity Catalog. It demonstrates how to build a robust, scalable data pipeline from raw ingestion to curated insights following the Bronze-Silver-Gold architecture.
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
-Architecture:
 
 Architecture:
 
