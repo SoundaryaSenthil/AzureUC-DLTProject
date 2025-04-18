@@ -9,8 +9,8 @@ Key Components
 
 2. Azure Data Factory Pipelines
 • Built two parameterized ADF pipelines:
-• GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
-• ADLS to Azure Data Lake: Ingests files from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
+• 1)GitHub to Bronze container in ADLS Gen 2: Ingests data directly from GitHub using a parameterized HTTP URL.
+ 2)Raw to Silver Layer Ingestion: Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
 3. Azure Databricks with Unity Catalog
 • Integrated Azure Databricks with ADLS using the DB connector.
@@ -18,7 +18,7 @@ Key Components
 • Created a schema for the Silver layer and performed the following transformations:
 • Handled null values and data type conversions (e.g., string to float).
 • Applied a window function to calculate the cumulative weight of athletes by country.
-• Performed duplicate checks and cleaned the data.
+• Performed duplicate checks and more and cleaned the data
 • Saved the transformed data in Delta format.
 
 4. Delta Live Tables (DLT) in Gold Layer
