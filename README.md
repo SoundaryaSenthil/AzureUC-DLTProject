@@ -22,6 +22,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
  🧩 Governance and Metadata: Unity Catalog in Databricks
 	
  🧩 Automation: Azure DevOps (CI/CD)
+![Screenshot 2025-04-19 095908](https://github.com/user-attachments/assets/48daf2a9-5af2-47af-8a07-20c4811418c7)
 
 ***KEY COMPONENTS***
 
