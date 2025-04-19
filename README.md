@@ -25,19 +25,19 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 
 ***KEY COMPONENTS***
 
-***🎯ADLS Integration and Bronze-Silver-Gold Zones***
+***🎺ADLS Integration and Bronze-Silver-Gold Zones***
 
 • Created four containers in ADLS for the Raw, Bronze, Silver, and Gold layers.
 
 • Set up folder structures to organize raw, transformed, and curated data systematically.
 	
-***🎯 Azure DevOps Integration***
+***🎲 Azure DevOps Integration***
 
 • Created an Azure DevOps account and set up a development branch.
 
 • Connected Azure Data Factory (ADF) with Azure DevOps for version control and pipeline management.
 	
-***🎯 Azure Data Factory Pipelines***
+***☄️ Azure Data Factory Pipelines***
 
 • Built two parameterized ADF pipelines:
 
@@ -49,7 +49,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 
      Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
 
-***🎯 Azure Databricks with Unity Catalog***
+***🎷 Azure Databricks with Unity Catalog***
  
 • Integrated Azure Databricks with ADLS using the DB connector.
 
@@ -63,7 +63,7 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 
 • Saved the transformed data in Delta format.
 
-***🎯 Delta Live Tables (DLT) in Gold Layer*** 
+***🥁 Delta Live Tables (DLT) in Gold Layer*** 
  
 • Created a DLT pipeline in the Gold (Curated) layer.
 
