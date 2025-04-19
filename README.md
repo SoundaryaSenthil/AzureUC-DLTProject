@@ -49,6 +49,8 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
   2) Raw to Silver Layer Ingestion: 
 
      Ingests necessary files only if matches the condition from Azure Data Lake Storage (ADLS) to appropriate layers within the lake.
+     ![Screenshot 2025-04-19 095947](https://github.com/user-attachments/assets/f73e0788-7fb5-4e49-afec-c8d71153106d)
+
 
 ***🎷 Azure Databricks with Unity Catalog***
  
