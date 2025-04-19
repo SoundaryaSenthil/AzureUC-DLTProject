@@ -62,6 +62,9 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
   - Performed duplicate checks and more and cleaned the data
 
 • Saved the transformed data in Delta format.
+![Screenshot 2025-04-19 094411](https://github.com/user-attachments/assets/78198d7c-fa8c-49fa-bfa6-2b1a903c037b)
+![Screenshot 2025-04-17 171034](https://github.com/user-attachments/assets/c75180b6-4579-40c3-89da-ba1bca59ce25)
+
 
 ***🥁 Delta Live Tables (DLT) in Gold Layer*** 
  
@@ -70,6 +73,8 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 • Streamed Delta files from the Silver layer.
 
 • Built final curated Delta tables using Databricks’ ETL framework (DLT).
+![Screenshot 2025-04-18 173651](https://github.com/user-attachments/assets/7801c7a9-532a-49ae-9438-77a491fe7475)
+
 
 ***KEY FEATURES & HIGHLIGHTS:***
 
