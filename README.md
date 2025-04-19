@@ -73,8 +73,6 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 • Streamed Delta files from the Silver layer.
 
 • Built final curated Delta tables using Databricks’ ETL framework (DLT).
-![Screenshot 2025-04-18 173651](https://github.com/user-attachments/assets/7801c7a9-532a-49ae-9438-77a491fe7475)
-
 
 ***KEY FEATURES & HIGHLIGHTS:***
 
