@@ -112,9 +112,19 @@ Scheduled Workflows (Databricks Lookup Notebooks & Monitoring)
 
 • Delta Lake + DLT: Reliable, scalable data storage and processing with ACID transactions and schema enforcement.
 
+• Governance with Unity Catalog: Centralized data governance and access control across all layers.
+
 ## 🎯 Conclusion
 
 This project demonstrates how Azure’s modern data engineering tools can work seamlessly together to build **scalable**, **automated**, and **governed** data solutions — ensuring data quality, integrity, and accessibility from raw ingestion to curated insights.
 
-• Governance with Unity Catalog: Centralized data governance and access control across all layers.
+---
+
+## Contact
+
+If you have any questions, feel free to connect with me on [LinkedIn](linkedin.com/in/soundarya-s-dataengineer).
+
+---
+Happy learning!!
+
 
