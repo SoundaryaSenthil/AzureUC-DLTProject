@@ -41,7 +41,7 @@ Unity Catalog (Governance & Access Control)
 Azure DevOps (CI/CD for ADF Pipelines & Databricks Notebooks)
        |
        v
-Scheduled Workflows (Databricks Lookup Notebooks & Monitoring)
+ created Workflows and DLT to land curated data in Gold layer
 ```
 
 ---
