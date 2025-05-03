@@ -9,19 +9,42 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 ![Screenshot 2025-04-18 190904](https://github.com/user-attachments/assets/5fcbec3f-a29a-4731-8a06-86e241fb60dd)
 
 
-***ARCHITECTURE:***
-	
-🧩 Source: GitHub Repository (CSV files accessed via API)
-	
- 🧩 Ingestion Layer: Azure Data Factory (ADF)
-	
- 🧩 Storage: Azure Data Lake Storage Gen2 (Bronze, Silver, Gold zones)
-	
- 🧩 Transformation: Azure Databricks (using notebooks and DLT pipelines)
-	
- 🧩 Governance and Metadata: Unity Catalog in Databricks
-	
- 🧩 Automation: Azure DevOps (CI/CD)
+## 📈 Project Flow
+
+```
+GitHub (Data Source)
+       |
+       v
+Azure Data Factory (Dynamic Pipelines)
+       |     
+       |-- Data Ingestion (Parameterized HTTP API)
+       |-- Data Validation & File Filtering
+       |-- ForEach Activity (Parallel Processing)
+       v
+Azure Data Lake Storage Gen2 (Raw Zone)
+       |
+       v
+Azure Databricks (Connected via DB Utils & Unity Catalog)
+       |
+       |-- Autoloader: Raw to Bronze (Streaming Ingestion)
+       |-- Bronze: Data Format Standardization (Delta)
+       |-- Silver: Data Cleansing, Type Conversion & Enrichment
+       |-- Gold: Aggregation, Business Logic & Curation via DLT
+       |
+       v
+Azure Data Lake Storage Gen2 (Bronze, Silver, Gold Zones)
+       |
+       v
+Unity Catalog (Governance & Access Control)
+       |
+       v
+Azure DevOps (CI/CD for ADF Pipelines & Databricks Notebooks)
+       |
+       v
+Scheduled Workflows (Databricks Lookup Notebooks & Monitoring)
+```
+
+---
 ![Screenshot 2025-04-19 095908](https://github.com/user-attachments/assets/48daf2a9-5af2-47af-8a07-20c4811418c7)
 
 ***KEY COMPONENTS***
@@ -88,6 +111,10 @@ It demonstrates how to build a robust, scalable, and governed data pipeline from
 • Automated Streaming: Real-time data ingestion and transformation with minimal manual intervention.
 
 • Delta Lake + DLT: Reliable, scalable data storage and processing with ACID transactions and schema enforcement.
+
+## 🎯 Conclusion
+
+This project demonstrates how Azure’s modern data engineering tools can work seamlessly together to build **scalable**, **automated**, and **governed** data solutions — ensuring data quality, integrity, and accessibility from raw ingestion to curated insights.
 
 • Governance with Unity Catalog: Centralized data governance and access control across all layers.
 
